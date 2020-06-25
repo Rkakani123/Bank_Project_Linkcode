@@ -38,8 +38,9 @@ public class Sendsms extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String phone=request.getParameter("phone");
-		SmS.sendsms(new Date().toLocaleString()+"Please verify your mobile number to complete your Bank registration", "9960012962" );
+		SmS.sendsms(new Date().toLocaleString()+"OTP-"+SmS.OTP(4)+"Please verify your mobile number to complete your Bank registration", phone );
 		
+
 		doGet(request, response);
 	}
 
