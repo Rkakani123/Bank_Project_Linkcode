@@ -2,7 +2,7 @@ package com.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-
+import java.sql.PreparedStatement;
 
 import com.model.Payee;
 
@@ -12,11 +12,19 @@ public class PayeeDao
 	{
 		try {
 
-			Class.forName("com.mysql.jdbc.Driver");
+			//Class.forName("com.mysql.jdbc.Driver");
 
 			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/details","root","123456");
 			System.out.println("Connected "+con);
-
+			 PreparedStatement ps=
+					con.prepareStatement("insert into payee values(?,?,?,?,?,?)");
+					ps.setInt(1,p.getCustNo());
+					ps.setInt(2,p.getAccountNo() );
+					ps.setString(3,p.getName());
+					ps.setString(4,p.getUsername());
+					ps.setString(5,p.getMobileNo());
+					ps.setString(6,p.getBranchName());
+					int i=ps.executeUpdate(); 
 					} 
 					catch (Exception e) 
 					{
@@ -35,15 +43,7 @@ public class PayeeDao
 			
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/details","root","123456");
 			System.out.println("Connected "+con);
-			PreparedStatement ps=
-			con.prepareStatement("insert into payee values(?,?,?,?,?,?)");
-			ps.setInt(1,111);
-			ps.setInt(2,1111111);
-			ps.setString(3,"Varun");
-			ps.setString(4,"var123");
-			ps.setInt(5,981200007);
-			ps.setString(6,"ICICI");
-			i=ps.executeUpdate(); 
+			
 					} 
 					catch (Exception e) 
 					{
