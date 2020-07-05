@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Bank Application/src"/>
+	<classpathentry kind="src" path="Bank Payee/Bank Payee/src"/>
+	<classpathentry kind="src" path="Bank Payee/src"/>
+	<classpathentry kind="src" path="mob_verification/src"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="output" path="Bank Application/build/classes"/>
+</classpath>
